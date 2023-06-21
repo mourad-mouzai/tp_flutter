@@ -10,8 +10,8 @@ Drawer DrowerGeneral(BuildContext context) {
           height:
               ResponsiveBreakpoints.of(context).largerThan(MOBILE) ? 250 : 320,
           child: DrawerHeader(
-            decoration: const BoxDecoration(
-              color: Colors.amber,
+            decoration: BoxDecoration(
+              color: Colors.grey[400],
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
