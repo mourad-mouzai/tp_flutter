@@ -1,5 +1,7 @@
 import 'package:first_project/layouts.dart';
+import 'package:first_project/routes/app_pages.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 void main() {
@@ -10,7 +12,7 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -18,6 +20,8 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: const PagesLayout(),
+      initialRoute: AppPages.INITIAL,
+      getPages: AppPages.routes,
       builder: (context, child) => ResponsiveBreakpoints.builder(
         child: child!,
         breakpoints: [

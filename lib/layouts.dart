@@ -1,5 +1,4 @@
-import 'dart:js_interop';
-
+import 'package:first_project/pages/home_page.dart';
 import 'package:first_project/widgets/app_bar_general.dart';
 import 'package:first_project/widgets/drawer_general.dart';
 import 'package:flutter/material.dart';
@@ -39,19 +38,27 @@ class _PagesLayoutState extends State<PagesLayout> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const AppBarGen(),
-      drawer: DrowerGeneral(context),
-      body: Center(
-        child: Text(
-          !_selectedIndex.isNull ? '$_selectedIndex' : "__",
-          style: const TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
+      drawer: const DrawerGen(),
+      body: Container(
+        color: const Color(0xFFF3F3F1),
+        padding: const EdgeInsets.all(20),
+        child: const HomePage(),
       ),
+
+      // Center(
+      //   child: Text(
+      //     !_selectedIndex.isNull ? '$_selectedIndex' : "__",
+      //     style: const TextStyle(
+      //       fontSize: 24,
+      //       fontWeight: FontWeight.bold,
+      //     ),
+      //   ),
+      // ),
       bottomNavigationBar: BottomAppBar(
         shape: const CircularNotchedRectangle(),
-        child: Container(height: 50.0),
+        child: Container(
+          height: 50.0,
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: func, // setState(),
